@@ -1,6 +1,4 @@
 # graduation
-graduationProject
-
 
 ```sql
 ```

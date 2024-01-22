@@ -11,8 +11,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gra.backend</groupId>
-    <artifactId>graduationPro</artifactId>
-    <name>graduationPro</name>
+    <artifactId>graduation</artifactId>
+    <name>graduation</name>
     <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <properties>
