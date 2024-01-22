@@ -47,7 +47,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: | # 命令中的 & 表示在后台运行进程
-            cd blog.imzjw.cn/actions/ && java -jar github-actions-springboot.jar &
+            cd actions/ && java -jar graduation.jar &
           host: ${{ secrets.HOST }}
           user: ${{ secrets.SSH_USER }}
           pass: ${{ secrets.SSH_PASSWORD }}
