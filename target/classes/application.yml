@@ -10,7 +10,7 @@ aliyun:
 
 spring:
   application:
-    name: graduationPro
+    name: graduation
   #rabbitmq配置
   datasource:
     url: jdbc:mysql://sh-cynosdbmysql-grp-38086q0k.sql.tencentcdb.com:26809/gra_pre?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
