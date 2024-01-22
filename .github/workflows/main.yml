@@ -37,7 +37,7 @@ jobs:
       - name: 将 JAR 包部署到服务器
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: target/graduation.jar
+          local: target/graduation-0.0.1-SNAPSHOT.jar
           remote: actions/graduation.jar
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USER }}
