@@ -1,14 +1,10 @@
 package com.gra.backend.controller;
 
-import com.gra.backend.pojo.Record;
 import com.gra.backend.service.RecordService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
 
 /**
  * @author: jiezhou
