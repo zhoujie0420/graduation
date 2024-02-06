@@ -17,7 +17,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/record")
 public class RecordController {
-
     @Resource
     private RecordService recordService;
 //
