@@ -6,5 +6,5 @@ import com.gra.backend.pojo.Appointment;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface AppointmentsMapper extends MPJBaseMapper<Appointment> {
+public interface AppointmentMapper extends MPJBaseMapper<Appointment> {
 }

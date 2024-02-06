@@ -1,6 +1,6 @@
 server:
   port: 8081
-  
+
 aliyun:
   oss:
     endpoint: oss-cn-shanghai.aliyuncs.com # oss对外服务的访问域名
@@ -40,8 +40,9 @@ spring:
     ############################################################
   redis:
     database: 0           # Redis数据库索引（默认为0）
-    host: 127.0.0.1      # Redis服务器地址
-    password:             # Redis服务器连接密码（默认为空）
+    host: r-bp16mkf3n88a18he4npd.redis.rds.aliyuncs.com      # Redis服务器地址
+    username: jiezhou
+    password: Zhoujie0420     # Redis服务器连接密码（默认为空）
     port: 6379           # Redis服务器连接端口
     jedis:
       pool:

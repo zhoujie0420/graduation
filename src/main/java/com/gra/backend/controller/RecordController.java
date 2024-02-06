@@ -20,19 +20,19 @@ public class RecordController {
 
     @Resource
     private RecordService recordService;
-
-    @PostMapping("list")
-    public Map<String,List<Record>> getListByDocId(@RequestParam Map<String, String> map) {
-        if (Collections.EMPTY_MAP.equals(map)) {
-            return null;
-        }
-        HashMap<String, List<Record>> resMap = new HashMap<>();
-
-        List<Record> res = recordService.getListByDocId(Integer.parseInt(map.get("id")));
-        if(Collections.EMPTY_LIST.equals(res)){
-            return resMap;
-        }
-        resMap.put("data",res);
-        return resMap;
-    }
+//
+//    @PostMapping("list")
+//    public Map<String,List<Record>> getListByDocId(@RequestParam Map<String, String> map) {
+//        if (Collections.EMPTY_MAP.equals(map)) {
+//            return null;
+//        }
+//        HashMap<String, List<Record>> resMap = new HashMap<>();
+//
+//        List<Record> res = recordService.getListByDocId(Integer.parseInt(map.get("id")));
+//        if(Collections.EMPTY_LIST.equals(res)){
+//            return resMap;
+//        }
+//        resMap.put("data",res);
+//        return resMap;
+//    }
 }
