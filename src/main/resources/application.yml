@@ -51,3 +51,9 @@ spring:
         max-idle: 10      # 连接池中的最大空闲连接
         min-idle: 2       # 连接池中的最小空闲连接
     connect-timeout: 6000 # 连接超时时间（毫秒）
+  rabbitmq:
+    host: 120.26.195.152
+    port: 5672
+    virtual-host: /
+    username: jiezhou
+    password: zhoujie0420

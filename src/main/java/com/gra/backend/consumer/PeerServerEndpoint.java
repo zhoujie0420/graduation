@@ -46,7 +46,6 @@ public class PeerServerEndpoint {
     @OnClose
     public void onClose(Session session, @PathParam("peerId") String peerId) {
         log.warn("on close:the session is is :{},the peer id is:{}", session.getId(), peerId);
-
         Session removedSession = PeerServerEndpoint.peerIdSessionMap.remove(peerId);
         try {
             if (Objects.nonNull(removedSession)) {
@@ -63,7 +62,6 @@ public class PeerServerEndpoint {
     public void onError(Session session, Throwable e, @PathParam("peerId") String peerId) {
         log.error("on error:the session is is :{},the exception class is: {},the peer id is:{}", session.getId(), e.getClass(), peerId);
         onClose(session, peerId);
-
         e.printStackTrace();
     }
 

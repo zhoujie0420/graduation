@@ -1,5 +1,7 @@
 package com.gra.backend.controller;
 
+import com.gra.backend.common.result.Result;
+import com.gra.backend.dto.RecordAddDto;
 import com.gra.backend.service.RecordService;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,19 +17,14 @@ import javax.annotation.Resource;
 public class RecordController {
     @Resource
     private RecordService recordService;
-//
-//    @PostMapping("list")
-//    public Map<String,List<Record>> getListByDocId(@RequestParam Map<String, String> map) {
-//        if (Collections.EMPTY_MAP.equals(map)) {
-//            return null;
-//        }
-//        HashMap<String, List<Record>> resMap = new HashMap<>();
-//
-//        List<Record> res = recordService.getListByDocId(Integer.parseInt(map.get("id")));
-//        if(Collections.EMPTY_LIST.equals(res)){
-//            return resMap;
-//        }
-//        resMap.put("data",res);
-//        return resMap;
-//    }
+
+    @PostMapping("addRecord")
+    public Result<?> addRecord() {
+        return recordService.addRecord();
+    }
+
+    @PostMapping("getRecords")
+    public Result<?> getRecords() {
+        return recordService.getRecords();
+    }
 }

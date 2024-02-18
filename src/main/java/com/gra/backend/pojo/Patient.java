@@ -17,7 +17,6 @@ public class Patient {
     @TableId(type = IdType.AUTO)
     private Integer id;
 
-    private Integer userId;
 
     // ,隔开
     private String recordList;

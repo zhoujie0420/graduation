@@ -38,9 +38,8 @@ public class Record {
     // 0 未完成 1 已完成
     private Integer status;
 
+    //返回的都是对方的name
     @TableField(exist = false)
-    private String doctorName;
+    private String otherName;
 
-    @TableField(exist = false)
-    private String patientName;
 }

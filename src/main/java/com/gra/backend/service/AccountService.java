@@ -78,20 +78,19 @@ public class AccountService {
 
     public Result<?> getRole(UserList userList) {
         LambdaQueryWrapper<User> userQw = new LambdaQueryWrapper<>();
-        userQw.eq(User::getUsername, userList.getUsername());
+        userQw.eq(User::getId, userList.getUsername());
         User user = userMapper.selectOne(userQw);
         if (user == null) {
             return Result.fail("用户不存在");
         }
         Integer role = user.getRole();
-
         LambdaQueryWrapper<User> userLambdaQueryWrapper = new LambdaQueryWrapper<>();
         // string list 转 int list stream
         List<Integer> list = Arrays.stream(userList.getUserList().toArray())
                 .map(Object::toString)
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
-        userLambdaQueryWrapper.in(User::getUsername, list);
+        userLambdaQueryWrapper.in(User::getId, list);
         userLambdaQueryWrapper.ne(User::getRole, role);
         List<User> users = userMapper.selectList(userLambdaQueryWrapper);
 
@@ -101,6 +100,14 @@ public class AccountService {
                     nowUser -> {
                         UserInfoRep userInfoRep = new UserInfoRep();
                         BeanUtil.copyProperties(nowUser, userInfoRep);
+                        LambdaQueryWrapper<Doctor> doctorLambdaQueryWrapper = new LambdaQueryWrapper<>();
+                        doctorLambdaQueryWrapper.eq(Doctor::getId, userInfoRep.getRoleId());
+                        Doctor doctor = doctorMapper.selectOne(doctorLambdaQueryWrapper);
+                        Integer departmentId = doctor.getDepartmentId();
+                        LambdaQueryWrapper<Department> departmentLambdaQueryWrapper = new LambdaQueryWrapper<>();
+                        departmentLambdaQueryWrapper.eq(Department::getId, departmentId);
+                        Department department = departmentMapper.selectOne(departmentLambdaQueryWrapper);
+                        userInfoRep.setDepartmentName(department.getDepartmentName());
                         res.add(userInfoRep);
                     }
             );
@@ -109,15 +116,6 @@ public class AccountService {
                     nowUser -> {
                         UserInfoRep userInfoRep = new UserInfoRep();
                         BeanUtil.copyProperties(nowUser, userInfoRep);
-                        user.getRoleId();
-                        LambdaQueryWrapper<Doctor> doctorLambdaQueryWrapper = new LambdaQueryWrapper<>();
-                        doctorLambdaQueryWrapper.eq(Doctor::getId, user.getRoleId());
-                        Doctor doctor = doctorMapper.selectOne(doctorLambdaQueryWrapper);
-                        Integer departmentId = doctor.getDepartmentId();
-                        LambdaQueryWrapper<Department> departmentLambdaQueryWrapper = new LambdaQueryWrapper<>();
-                        departmentLambdaQueryWrapper.eq(Department::getId, departmentId);
-                        Department department = departmentMapper.selectOne(departmentLambdaQueryWrapper);
-                        userInfoRep.setDepartmentName(department.getDepartmentName());
                         res.add(userInfoRep);
                     }
             );

@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 public class Doctor {
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private Integer userId;
     private Integer departmentId;
     private String recordList;
 }
