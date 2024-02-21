@@ -1,0 +1,59 @@
+server:
+  port: 8081
+
+aliyun:
+  oss:
+    endpoint: oss-cn-shanghai.aliyuncs.com # oss对外服务的访问域名
+    accessKeyId: LTAI5tNcpfYWvzB91uyD1Y5x # 访问身份验证中用到用户标识
+    accessKeySecret: Fp7U6vFLYEUkya3GEqpGCFPFnGzMGM # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
+    bucketName: cbb4zs # oss的存储空间
+
+spring:
+  application:
+    name: graduation
+  #rabbitmq配置
+  datasource:
+    url: jdbc:mysql://sh-cynosdbmysql-grp-38086q0k.sql.tencentcdb.com:26809/gra_pre?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: Fan20011001
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      max-lifetime: 120000
+  mail:
+    #    protocol: smtps  ??163 ? smtps  qq?smtp
+    protocol: smtps
+    # ?? SMTP ?????
+    host: smtp.163.com
+    # ?????
+    #    username:
+    username: zzac0420@163.com
+    # ??????????????????????????
+    password: BXWPKCLJQILSAGPJ
+    # ???465?587
+    #    port: 465
+    port: 465
+    # ????????UTF-8
+    default-encoding: UTF-8
+
+    ############################################################
+    # REDIS 配置
+    ############################################################
+  redis:
+    database: 0           # Redis数据库索引（默认为0）
+    host: r-bp16mkf3n88a18he4npd.redis.rds.aliyuncs.com      # Redis服务器地址
+    username: jiezhou
+    password: Zhoujie0420     # Redis服务器连接密码（默认为空）
+    port: 6379           # Redis服务器连接端口
+    jedis:
+      pool:
+        max-active: 8     # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10      # 连接池中的最大空闲连接
+        min-idle: 2       # 连接池中的最小空闲连接
+    connect-timeout: 6000 # 连接超时时间（毫秒）
+  rabbitmq:
+    host: 120.26.195.152
+    port: 5672
+    virtual-host: /
+    username: jiezhou
+    password: zhoujie0420
