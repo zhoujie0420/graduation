@@ -23,18 +23,18 @@ package com.gra.backend.controller;/**
  */
 
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Oss相关操作接口
  */
 @RestController
-@RequestMapping("/api/aliyun/oss")
 public class OssController {
+    @GetMapping("/oss")
+    public String oss() {
+        return "oss";
+    }
 
     @PostMapping("/upload")
     public String upload(@RequestPart("file") MultipartFile file) {

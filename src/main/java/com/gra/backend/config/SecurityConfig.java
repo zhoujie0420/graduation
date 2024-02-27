@@ -45,7 +45,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/user/account/token/",
                         "/api/user/account/register/",
                         "/actions",
-                        "/record/test"
+                        "/record/test",
+                        "/oss"
                 ).permitAll()
                 .antMatchers("/pk/game/snake/start", "/pk/game/snake/receiveBot").hasIpAddress("127.0.0.1")   // 增加此行、
                 .antMatchers(

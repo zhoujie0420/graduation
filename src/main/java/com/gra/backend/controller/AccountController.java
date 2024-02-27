@@ -16,6 +16,7 @@ import javax.annotation.Resource;
 public class AccountController {
 
     private final AccountService accountService;
+
     @GetMapping("test")
     public Result<?> test() {
         return Result.success("test");
