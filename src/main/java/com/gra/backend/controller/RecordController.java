@@ -13,20 +13,17 @@ import javax.annotation.Resource;
  **/
 
 @RestController
+@RequestMapping("/api/record")
 public class RecordController {
-
     @Resource
     private RecordService recordService;
-    @GetMapping("/record/test")
-    public String actions() {
-        return "GitHub Actions";
-    }
-    @PostMapping("/record/addRecord")
+
+    @PostMapping("addRecord")
     public Result<?> addRecord() {
         return recordService.addRecord();
     }
 
-    @PostMapping("/record/getRecords")
+    @PostMapping("getRecords")
     public Result<?> getRecords() {
         return recordService.getRecords();
     }

@@ -40,7 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 // 放行这两个接口
-                .antMatchers("/user/account/test/",
+                .antMatchers(
+                        "/api/user/account/test/",
                         "/api/user/account/token/",
                         "/api/user/account/register/",
                         "/actions",

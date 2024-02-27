@@ -16,10 +16,10 @@ import javax.annotation.Resource;
 public class AccountController {
 
     private final AccountService accountService;
-    @Resource
-    private RedisUtil redisUtil;
-
-
+    @GetMapping("test")
+    public Result<?> test() {
+        return Result.success("test");
+    }
     @PostMapping("token") //账号密码获取token
     public Result<?> getToken(User user) {
         return accountService.getToken(user);
@@ -34,7 +34,6 @@ public class AccountController {
     public Result<?> register(User user) {
         return accountService.register(user);
     }
-
 
     @PostMapping("getRole")
     public Result<?> getRole(UserList userList) {
