@@ -41,10 +41,6 @@ public class AccountController {
         return accountService.getRole(userList);
     }
 
-    @GetMapping("/test")
-    public String actions() {
-        return "GitHub Actions";
-    }
 
 //    @PostMapping("emailtoken")  //邮箱code获取token
 //    public Result<?> getEmailToken(@RequestParam Map<String, String> map) {

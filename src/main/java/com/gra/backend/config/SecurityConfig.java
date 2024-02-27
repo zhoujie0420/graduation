@@ -40,11 +40,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 // 放行这两个接口
-                .antMatchers("/api/user/account/test/",
+                .antMatchers("/user/account/test/",
                         "/api/user/account/token/",
                         "/api/user/account/register/",
                         "/actions",
-                        "/api/record/test"
+                        "/record/test"
                 ).permitAll()
                 .antMatchers("/pk/game/snake/start", "/pk/game/snake/receiveBot").hasIpAddress("127.0.0.1")   // 增加此行、
                 .antMatchers(
