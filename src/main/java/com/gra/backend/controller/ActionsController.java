@@ -13,4 +13,5 @@ public class ActionsController {
     public String actions() {
         return "GitHub Actions";
     }
+
 }

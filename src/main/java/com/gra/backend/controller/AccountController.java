@@ -41,11 +41,9 @@ public class AccountController {
         return accountService.getRole(userList);
     }
 
-    @RequestMapping("test")
-    public String test() {
-        redisUtil.set(String.valueOf(1), 1);
-        System.out.println(redisUtil.getAllKeys());
-        return "success";
+    @GetMapping("/test")
+    public String actions() {
+        return "GitHub Actions";
     }
 
 //    @PostMapping("emailtoken")  //邮箱code获取token
