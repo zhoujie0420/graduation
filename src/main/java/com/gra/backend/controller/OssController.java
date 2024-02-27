@@ -33,6 +33,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class OssController {
     @GetMapping("/oss")
     public String oss() {
+        String url = null;
         return "oss";
     }
 
