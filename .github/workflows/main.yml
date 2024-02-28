@@ -36,8 +36,7 @@ jobs:
         run: mvn -B package --file pom.xml -Dmaven.test.skip=true
       - name: 杀死8081进程，防止端口占用导致部署失败且无提示
         run: |
-          sudo lsof -t -i:8081 | xargs sudo kill -9
-        if: always()
+          sudo lsof -t -i:8081 | xargs sudo kill -9 && echo "成功杀死8081进程" || echo "未能杀死8081进程，可能端口未被占用或权限不足"
       - name: 将 JAR 包部署到服务器
         uses: garygrossgarten/github-action-scp@release
         with:
