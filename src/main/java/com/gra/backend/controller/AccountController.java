@@ -4,7 +4,7 @@ import com.gra.backend.common.result.Result;
 import com.gra.backend.dto.UserList;
 import com.gra.backend.pojo.User;
 import com.gra.backend.service.AccountService;
-import com.gra.backend.utils.redis.RedisUtil;
+
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

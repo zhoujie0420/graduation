@@ -77,13 +77,7 @@ public class AccountService {
     }
 
     public Result<?> getRole(UserList userList) {
-        LambdaQueryWrapper<User> userQw = new LambdaQueryWrapper<>();
-        userQw.eq(User::getId, userList.getUsername());
-        User user = userMapper.selectOne(userQw);
-        if (user == null) {
-            return Result.fail("用户不存在");
-        }
-        Integer role = user.getRole();
+        Integer role = Integer.valueOf(userList.getUserRole());
         LambdaQueryWrapper<User> userLambdaQueryWrapper = new LambdaQueryWrapper<>();
         // string list 转 int list stream
         List<Integer> list = Arrays.stream(userList.getUserList().toArray())

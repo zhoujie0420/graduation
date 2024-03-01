@@ -12,5 +12,5 @@ import java.util.List;
 public class UserList {
 
     private List<String> userList;
-    private String username;
+    private String userRole;
 }
